@@ -288,9 +288,10 @@ Crafted for those who appreciate flavour, ambience, and refined evenings.
             <h2 className="text-5xl font-extrabold mb-6">
               Contact <span className="text-yellow-400">Us</span>
             </h2>
-            <p>📍 Bengaluru, India</p>
-            <p>📞 +91 98765 43210</p>
-            <p>📧 hello@shoukeenlounge.com</p>
+             <p> ALOFT HOTELS  </p>
+            <p>📍 AL MINA BUR DUBAI </p>
+            <p>📞 +971 501104966</p>
+            <p>📧 shoukeenlounge@gmail.com</p>
           </div>
         </div>
       </section>
