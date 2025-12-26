@@ -20,7 +20,17 @@ export default function FoodMenu() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div
+      className="
+        min-h-screen
+        text-white
+        animated-gradient
+        bg-gradient-to-br
+        from-black
+        via-[#2a0f1f]
+        to-[#12040b]
+      "
+    >
       <Navbar />
       <ScrollProgress />
 
@@ -29,21 +39,24 @@ export default function FoodMenu() {
 
         <div className="max-w-4xl mx-auto px-6 space-y-16 pb-24">
           <section id="starters">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Starters</h2>
-           <MenuImage src="/menu/foodmenu/foodmenu1.png" />
-
-
-
+            <h2 className="text-2xl font-bold text-yellow-400 mb-6">
+              Starters
+            </h2>
+            <MenuImage src="/menu/foodmenu/foodmenu1.png" />
           </section>
 
           <section id="mains">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Mains</h2>
-           <MenuImage src="/menu/foodmenu/foodmenu2.png" />
+            <h2 className="text-2xl font-bold text-yellow-400 mb-6">
+              Mains
+            </h2>
+            <MenuImage src="/menu/foodmenu/foodmenu2.png" />
           </section>
 
           <section id="desserts">
-            <h2 className="text-2xl font-bold text-yellow-400 mb-6">Desserts</h2>
-             <MenuImage src="/menu/foodmenu/foodmenu3.png" />
+            <h2 className="text-2xl font-bold text-yellow-400 mb-6">
+              Desserts
+            </h2>
+            <MenuImage src="/menu/foodmenu/foodmenu3.png" />
           </section>
         </div>
       </div>

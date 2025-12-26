@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 
 import FoodMenu from "./pages/FoodMenu";
@@ -11,9 +11,6 @@ function Home() {
   const navigate = useNavigate();
   const sliderRef = useRef(null);
 
-  const [activePartner, setActivePartner] = useState(null);
-  const [activeBio, setActiveBio] = useState(null);
-
   /* ---------------- MENU DATA ---------------- */
   const menus = [
     { title: "FOOD MENU", path: "/food", img: "/menu/food.jpg" },
@@ -21,51 +18,25 @@ function Home() {
     { title: "SHEESHA MENU", path: "/sheesha", img: "/menu/sheesha.jpg" },
   ];
 
-  /* ---------------- PARTNERS DATA ---------------- */
-  const partners = [
-    {
-      name: "Brand A",
-      img: "/partners/partner1.jpg",
-      desc: "Premium spirits and lounge collaboration partner.",
-    },
-    {
-      name: "Brand B",
-      img: "/partners/partner2.jpg",
-      desc: "Luxury hospitality and curated events partner.",
-    },
-    {
-      name: "Brand C",
-      img: "/partners/partner3.jpg",
-      desc: "Exclusive food & beverage sourcing partner.",
-    },
-    {
-      name: "Brand D",
-      img: "/partners/partner4.jpg",
-      desc: "Lifestyle and ambience experience partner.",
-    },
-  ];
-
- 
   /* ---------------- ABOUT AUTO SCROLL ---------------- */
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
-      index = (index + 1) % 3;
+      index = (index + 1) % 5;
       sliderRef.current?.scrollTo({
         left: index * window.innerWidth,
         behavior: "smooth",
       });
-    }, 3000);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="text-white">
-
       {/* ================= HOME ================= */}
       <section
         id="home"
-        className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black"
+        className="min-h-screen animated-gradient bg-gradient-to-br from-purple-900 via-black to-indigo-900"
       >
         <Navbar />
 
@@ -76,7 +47,6 @@ function Home() {
           className="pt-40 px-6 text-center"
         >
           <h1 className="text-6xl font-extrabold gold-gradient-text">
-
             SHOUKEEN{" "}
             <span className="gold-gradient-text">PREMIUM INDIAN LOUNGE</span>
           </h1>
@@ -99,121 +69,88 @@ function Home() {
               transition={{ delay: i * 0.2 }}
               className="cursor-pointer bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-400/40 transition-all"
             >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="h-48 w-full object-cover"
-              />
+              <img src={item.img} className="h-48 w-full object-cover" />
               <div className="p-8">
                 <h3 className="text-xl font-semibold gold-gradient-text">
                   {item.title}
                 </h3>
-                <p className="text-gray-500">
-                  Click to view full menu
-                </p>
+                <p className="text-gray-500">Click to view full menu</p>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-     {/* ================= ABOUT ================= */}
-<section id="about" className="py-36 bg-black">
-  <h2 className="text-5xl font-extrabold text-center mb-12 gold-gradient-text">
-    About Shoukeen
-  </h2>
-  <p className="text-gray-400 max-w-2xl mx-auto mb-20">
-           Shoukeen Indian Lounge blends tradition, taste, and atmosphere into one seamless experience.
-Crafted for those who appreciate flavour, ambience, and refined evenings.
-  </p>
+      {/* ================= ABOUT ================= */}
+      <section
+        id="about"
+        className="py-24 animated-gradient bg-gradient-to-br from-black via-gray-950 to-black"
+      >
+        <div className="text-center px-6">
+          <h2 className="text-5xl font-extrabold gold-gradient-text mb-6">
+            About Shoukeen
+          </h2>
 
-  <div
-    ref={sliderRef}
-    className="
-      flex gap-4 overflow-x-auto no-scrollbar
-      scroll-smooth snap-x snap-mandatory
-      px-6
-    "
-  >
-    {[
-      "/about1.jpeg",
-      "/about2.jpeg",
-      "/about3.jpeg",
-      "/about4.jpeg",
-      "/about5.jpeg",
-      
-    ].map((img, i) => (
-      <img
-        key={i}
-        src={img}
-        alt={`About ${i + 1}`}
-        className="
-          snap-center
-          w-[85vw] md:w-[70vw] lg:w-[60vw]
-          max-w-[900px]
-          h-[320px] md:h-[380px]
-          object-cover
-          rounded-3xl
-          flex-shrink-0
-        "
-        loading="lazy"
-      />
-    ))}
-  </div>
-</section>
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-14 leading-relaxed">
+            Shoukeen Indian Lounge blends tradition, taste, and atmosphere into
+            one seamless experience. Crafted for those who appreciate flavour,
+            ambience, and refined evenings.
+          </p>
+        </div>
 
-     
-    
-
+        <div
+          ref={sliderRef}
+          className="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-6"
+        >
+          {[
+            "/about1.jpeg",
+            "/about2.jpeg",
+            "/about3.jpeg",
+            "/about4.jpeg",
+            "/about5.jpeg",
+          ].map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              className="snap-center w-[85vw] md:w-[70vw] lg:w-[60vw] max-w-[900px]
+                         h-[320px] md:h-[380px] object-cover rounded-3xl flex-shrink-0"
+            />
+          ))}
+        </div>
+      </section>
 
       {/* ================= CONTACT ================= */}
       <section
         id="contact"
-        className="py-40 bg-gradient-to-br from-purple-900 via-black to-indigo-900"
+        className="py-32 animated-gradient bg-gradient-to-br from-black via-[#0b1a2a] to-[#050b14]"
       >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <img
             src="/contact.jpeg"
             className="h-[380px] w-full object-cover rounded-3xl"
           />
+
           <div>
             <h2 className="text-5xl font-extrabold mb-6">
-              Contact <span className="text-yellow-400 gold-gradient-text">Us</span>
+              Contact <span className="gold-gradient-text">Us</span>
             </h2>
-             <p> ALOFT HOTELS  </p>
-            <p>📍 AL MINA BUR DUBAI </p>
+
+            <p>ALOFT HOTELS</p>
+            <p>📍 AL MINA BUR DUBAI</p>
             <p>📞 +971 501104966</p>
             <p>📧 shoukeenlounge@gmail.com</p>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScFbiUzJ_5GZmAMJ5-nFPgdF57GviZm8uBupRW9-GKaqJVOwQ/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition"
+            >
+              Give Feedback
+            </a>
           </div>
         </div>
       </section>
-
-      {/* ================= MODALS ================= */}
-      {activePartner && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-gray-900 p-8 rounded-2xl max-w-md text-center">
-            <img src={activePartner.img} className="h-48 w-full object-cover rounded-xl mb-4" />
-            <h3 className="text-yellow-400 text-2xl mb-2">{activePartner.name}</h3>
-            <p className="text-gray-300 mb-6">{activePartner.desc}</p>
-            <button onClick={() => setActivePartner(null)} className="bg-yellow-400 text-black px-6 py-2 rounded-full">
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
-      {activeBio && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-gray-900 p-8 rounded-2xl max-w-md text-center">
-            <h3 className="text-yellow-400 text-2xl mb-2">{activeBio.name}</h3>
-            <p className="text-gray-300 mb-6">{activeBio.bio}</p>
-            <button onClick={() => setActiveBio(null)} className="bg-yellow-400 text-black px-6 py-2 rounded-full">
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
     </div>
   );
 }

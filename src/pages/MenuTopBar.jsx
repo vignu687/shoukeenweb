@@ -1,55 +1,57 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function MenuTopBar({ title, sections }) {
   const navigate = useNavigate();
-  const [active, setActive] = useState(sections[0]?.id);
 
-  useEffect(() => {
-    const onScroll = () => {
-      for (let sec of sections) {
-        const el = document.getElementById(sec.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            setActive(sec.id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [sections]);
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <div className="sticky top-20 z-40 bg-black/80 backdrop-blur border-b border-white/10">
-      <div className="max-w-4xl mx-auto px-6 py-3 flex items-center gap-4 overflow-x-auto">
-        <button
-          onClick={() => navigate(-1)}
-          className="text-sm px-3 py-1 rounded-full border border-white/20 hover:bg-white/10"
-        >
-          ← Back
-        </button>
+    <div
+      className="
+        sticky top-[88px] z-40
+        backdrop-blur-lg
+        bg-gradient-to-r
+        from-black/70
+        via-[#2a0f1f]/70
+        to-black/70
+        border-y border-white/10
+      "
+    >
+      <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <span className="text-yellow-400 font-semibold">{title}</span>
+        {/* LEFT: BACK + TITLE */}
+        <div className="flex items-center gap-4">
+          {/* BACK BUTTON */}
+          <button
+            onClick={() => navigate("/")}
+            className="text-gray-300 hover:text-yellow-400 transition text-sm"
+          >
+            ← Back
+          </button>
 
-        <div className="flex gap-4 ml-auto">
+          {/* TITLE */}
+          <h1 className="text-xl font-bold gold-gradient-text">
+            {title}
+          </h1>
+        </div>
+
+        {/* RIGHT: SECTIONS */}
+        <div className="flex gap-6 text-sm font-medium">
           {sections.map((s) => (
-            <a
+            <button
               key={s.id}
-              href={`#${s.id}`}
-              className={`text-sm whitespace-nowrap ${
-                active === s.id
-                  ? "text-yellow-400 font-semibold"
-                  : "text-gray-400 hover:text-yellow-400"
-              }`}
+              onClick={() => scrollTo(s.id)}
+              className="text-gray-300 hover:text-yellow-400 transition"
             >
               {s.label}
-            </a>
+            </button>
           ))}
         </div>
+
       </div>
     </div>
   );

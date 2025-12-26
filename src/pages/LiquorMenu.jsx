@@ -4,7 +4,19 @@ import ScrollProgress from "../components/ScrollProgress";
 
 export default function LiquorMenu() {
   return (
-    <div className="min-h-screen bg-black text-white">
+ <div
+  className="
+    min-h-screen
+    text-white
+    animated-gradient
+    bg-gradient-to-br
+    from-black
+    via-[#1f0b17]
+    to-black
+  "
+>
+
+
       <Navbar />
       <ScrollProgress />
 
@@ -15,13 +27,34 @@ export default function LiquorMenu() {
         />
 
         <div className="max-w-4xl mx-auto px-6 pb-24">
-         <img src="/menu/liquormenu/liquormenu1.png" className="rounded-2xl mb-10 w-full" />
-<img src="/menu/liquormenu/liquormenu2.png" className="rounded-2xl w-full" />
-<img src="/menu/liquormenu/liquormenu3.png" className="rounded-2xl mb-10 w-full" />
-<img src="/menu/liquormenu/liquormenu4.png" className="rounded-2xl w-full" />
-<img src="/menu/liquormenu/liquormenu5.png" className="rounded-2xl mb-10 w-full" />
-<img src="/menu/liquormenu/liquormenu6.png" className="rounded-2xl w-full" />
-<img src="/menu/liquormenu/liquormenu7.png" className="rounded-2xl w-full" />
+          <img
+            src="/menu/liquormenu/liquormenu1.png"
+            className="rounded-2xl mb-10 w-full"
+          />
+          <img
+            src="/menu/liquormenu/liquormenu2.png"
+            className="rounded-2xl mb-10 w-full"
+          />
+          <img
+            src="/menu/liquormenu/liquormenu3.png"
+            className="rounded-2xl mb-10 w-full"
+          />
+          <img
+            src="/menu/liquormenu/liquormenu4.png"
+            className="rounded-2xl mb-10 w-full"
+          />
+          <img
+            src="/menu/liquormenu/liquormenu5.png"
+            className="rounded-2xl mb-10 w-full"
+          />
+          <img
+            src="/menu/liquormenu/liquormenu6.png"
+            className="rounded-2xl mb-10 w-full"
+          />
+          <img
+            src="/menu/liquormenu/liquormenu7.png"
+            className="rounded-2xl w-full"
+          />
         </div>
       </div>
     </div>
