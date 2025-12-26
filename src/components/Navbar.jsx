@@ -52,13 +52,6 @@ export default function Navbar() {
             Contact
           </li>
         </ul>
-
-        {/* RIGHT LOGO */}
-        <img
-          src="/logo.png"
-          alt="Shoukeen Logo"
-          className="h-10 w-10 md:h-11 md:w-11 object-contain"
-        />
       </div>
     </nav>
   );

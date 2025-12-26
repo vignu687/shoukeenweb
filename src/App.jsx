@@ -44,8 +44,16 @@ function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="pt-40 px-6 text-center"
+         className="pt-28 md:pt-32 px-6 text-center"
+
         >
+          {/* LOGO */}
+<img
+  src="/logo.png"
+  alt="Shoukeen Logo"
+  className="mx-auto mb-6 h-24 md:h-28 lg:h-32 object-contain drop-shadow-[0_0_20px_rgba(255,215,0,0.15)]"
+
+/>
           <h1 className="text-6xl font-extrabold gold-gradient-text">
             SHOUKEEN{" "}
             <span className="gold-gradient-text">PREMIUM INDIAN LOUNGE</span>
