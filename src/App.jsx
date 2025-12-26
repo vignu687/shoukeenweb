@@ -45,31 +45,7 @@ function Home() {
     },
   ];
 
-  /* ---------------- DEVCOPS DATA ---------------- */
- const devcops = [
-  {
-    name: "Vignesh Bhat",
-    role: "Frontend and App Developer / Freelancer",
-    img: "/devcops/dev1.jpeg",
-   bio: "A frontend and app developer focused on crafting premium, high-performance digital experiences. Specializes in modern React architectures, smooth UI animations, and user-centric design systems. Passionate about transforming ideas into scalable, elegant products with strong attention to detail and usability.",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/vignesh-bhat-209808218",
-      github: "https://github.com/vignu687",
-    },
-  },
-  {
-    name: "Karthik Vignesh",
-    role: "Software Engineer @LG Soft India",
-    img: "/devcops/dev2.jpeg",
-   bio: "A backend-focused software engineer experienced in building secure, scalable, and high-performance systems. Strong in system architecture, APIs, and database design, with a focus on reliability and maintainability. Enjoys solving complex engineering problems and designing backend solutions that scale seamlessly.",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/karthik-link",
-      github: "https://github.com/kv13b",
-    },
-  },
-];
-
-
+ 
   /* ---------------- ABOUT AUTO SCROLL ---------------- */
   useEffect(() => {
     let index = 0;
@@ -129,7 +105,7 @@ function Home() {
                 className="h-48 w-full object-cover"
               />
               <div className="p-8">
-                <h3 className="text-xl font-semibold text-yellow-400 mb-2">
+                <h3 className="text-xl font-semibold gold-gradient-text">
                   {item.title}
                 </h3>
                 <p className="text-gray-500">
@@ -188,90 +164,6 @@ Crafted for those who appreciate flavour, ambience, and refined evenings.
 
      
     
-{/* ================= DEVCOPS ================= */}
-<section
-  id="devcops"
-  className="py-36 bg-gradient-to-br from-gray-950 via-black to-gray-800"
->
-  {/* SECTION HEADING */}
-  <div className="text-center mb-16 px-6">
-    <h2 className="text-5xl font-extrabold mb-4">
-      Devcops <span className="gold-gradient-text">Team</span>
-    </h2>
-    <p className="text-gray-400 max-w-xl mx-auto">
-      The minds behind the experience — building scalable, reliable, and
-      premium digital solutions.
-    </p>
-  </div>
-
-  {/* TEAM CARDS */}
-  <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 px-6">
-    {devcops.map((m) => (
-      <div
-        key={m.name}
-        className="
-          group
-          bg-white/5 border border-white/10
-          rounded-2xl p-8 text-center
-          transition-all duration-300
-          hover:-translate-y-2 hover:border-yellow-400/30
-        "
-      >
-        {/* IMAGE */}
-        <img
-          src={m.img}
-          alt={m.name}
-          className="h-40 w-40 object-cover rounded-full mx-auto mb-6"
-        />
-
-        {/* NAME */}
-        <h3 className="text-xl font-semibold gold-gradient-text">
-          {m.name}
-        </h3>
-
-        {/* ROLE */}
-        <p className="text-gray-400 text-sm mt-1">
-          {m.role}
-        </p>
-
-        {/* SOCIAL LINKS (SHOW ON HOVER) */}
-        <div className="flex justify-center gap-5 mt-4 opacity-0 group-hover:opacity-100 transition">
-          {m.socials?.linkedin && (
-            <a
-              href={m.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-400 hover:text-yellow-400 transition"
-            >
-              LinkedIn
-            </a>
-          )}
-
-          {m.socials?.github && (
-            <a
-              href={m.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-gray-400 hover:text-yellow-400 transition"
-            >
-              GitHub
-            </a>
-          )}
-        </div>
-
-        {/* VIEW BIO */}
-        <div className="mt-4 opacity-0 group-hover:opacity-100 transition">
-          <button
-            onClick={() => setActiveBio(m)}
-            className="text-sm text-yellow-400 underline hover:text-yellow-300 transition"
-          >
-            View Bio
-          </button>
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
 
 
       {/* ================= CONTACT ================= */}
@@ -286,7 +178,7 @@ Crafted for those who appreciate flavour, ambience, and refined evenings.
           />
           <div>
             <h2 className="text-5xl font-extrabold mb-6">
-              Contact <span className="text-yellow-400">Us</span>
+              Contact <span className="text-yellow-400 gold-gradient-text">Us</span>
             </h2>
              <p> ALOFT HOTELS  </p>
             <p>📍 AL MINA BUR DUBAI </p>

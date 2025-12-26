@@ -36,7 +36,6 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
           <li onClick={() => scrollTo("home")} className="hover:text-yellow-400 cursor-pointer">Home</li>
           <li onClick={() => scrollTo("about")} className="hover:text-yellow-400 cursor-pointer">About</li>
-          <li onClick={() => scrollTo("devcops")} className="hover:text-yellow-400 cursor-pointer">Devcops</li>
           <li onClick={() => scrollTo("contact")} className="hover:text-yellow-400 cursor-pointer">Contact</li>
         </ul>
 
